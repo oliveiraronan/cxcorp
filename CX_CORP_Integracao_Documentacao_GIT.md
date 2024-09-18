@@ -1,5 +1,6 @@
 
 # Documentação de Integração da Plataforma CX CORP
+CASO DE USO: PROGRAMA DE INDICAÇÃO E RECOMPENSA
 
 ## 1. Introdução
 Esta documentação cobre a integração entre o sistema CX CORP e o ERP do cliente para o envio e processamento de indicações e conversões, relacionadas ao programa de pontos e recompensas da Irmãos Soares.
