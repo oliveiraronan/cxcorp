@@ -27,6 +27,18 @@ curl -X GET 'https://api.cxcorp.com/v1/referrals' \
 
 O CX CORP envia as indicações ao ERP, que processará a regra de negócio para determinar o status da indicação (aprovado ou recusado), bem como o valor a ser creditado ou debitado, seja em pontos ou em moeda.
 
+#### Parâmetros da Requisição
+
+| Parâmetro      | Tipo   | Obrigatório | Descrição                                            |
+|----------------|--------|-------------|------------------------------------------------------|
+| affiliate_id   | string | Sim         | ID primário gerado pelo CX CORP                      |
+| secondary_id   | string | Sim         | CPF ou outro ID definido pelo cliente                |
+| datetime       | string | Sim         | Data e hora da indicação                             |
+| campaign_id    | string | Sim         | ID da campanha associada                             |
+| referral_id    | string | Sim         | ID da indicação                                      |
+| nfe_key        | string | Sim         | Chave da Nota Fiscal Eletrônica (NF-e)               |
+| profile        | string | Não         | Perfil do afiliado (ex: pedreiro, pintor)            |
+
 #### Exemplo de Requisição:
 
 ```bash
@@ -49,6 +61,18 @@ curl -X POST 'https://api.cxcorp.com/v1/affiliates/aff_123456/referrals' \
 ### 3.2. Passo 2: CX CORP Recebe Resposta do ERP
 
 O CX CORP recebe do ERP o status da indicação (aprovado, recusado), o valor creditado ou debitado (em pontos ou moeda), e outras informações adicionais para atualizar o extrato do afiliado.
+
+#### Parâmetros da Resposta
+
+| Parâmetro          | Tipo   | Obrigatório | Descrição                                                |
+|--------------------|--------|-------------|----------------------------------------------------------|
+| referral_id        | string | Sim         | ID da indicação registrada                                |
+| status             | string | Sim         | Status da indicação (pendente, aprovado, recusado)        |
+| points_increment   | float  | Não         | Incremento ou decremento de pontos                        |
+| cashback_increment | float  | Não         | Incremento ou decremento em valor monetário               |
+| currency           | string | Não         | Padrão de moeda (BRL ou USD)                              |
+| history_short      | string | Sim         | Histórico reduzido (até 15 caracteres)                    |
+| details            | string | Não         | Detalhamento adicional (até 255 caracteres)               |
 
 #### Exemplo de Requisição:
 
