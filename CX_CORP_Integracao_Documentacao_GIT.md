@@ -3,7 +3,7 @@
 CASO DE USO: PROGRAMA DE INDICAÇÃO E RECOMPENSA
 
 ## 1. Introdução
-Esta documentação cobre a integração entre o sistema CX CORP e o ERP do cliente para o envio e processamento de indicações e conversões, relacionadas ao programa de pontos e recompensas da Irmãos Soares.
+Esta documentação cobre a integração entre o sistema CX CORP e o ERP do cliente para o envio e processamento de indicações e conversões, relacionadas ao programa de pontos e recompensas.
 
 **Pré-requisitos**: Necessidade de acesso à API da CX CORP, credenciais de autenticação, e conhecimento básico de APIs REST.
 
